@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect WhatsApp</title>
+  <script>
+    const links = [
+      "https://wa.me/60169646782?text=Hai%20saya%20perlukan%20bantuan%20dengan%20sistem%20Bioid",
+      "https://wa.me/60192512947?text=Hai%20saya%20perlukan%20bantuan%20dengan%20sistem%20Bioid",
+      "https://wa.me/60193305612?text=Hai%20saya%20perlukan%20bantuan%20dengan%20sistem%20Bioid",
+      "https://wa.me/60192957324?text=Hai%20saya%20perlukan%20bantuan%20dengan%20sistem%20Bioid",
+      "https://wa.me/60173659857?text=Hai%20saya%20perlukan%20bantuan%20dengan%20sistem%20Bioid"
+    ];
+
+    // Simpan index dalam localStorage supaya bergilir setiap klik
+    let index = localStorage.getItem("redirectIndex") ? parseInt(localStorage.getItem("redirectIndex")) : 0;
+
+    window.onload = function() {
+      window.location.href = links[index];
+      index = (index + 1) % links.length;
+      localStorage.setItem("redirectIndex", index);
+    };
+  </script>
+</head>
+<body>
+  <p>Sila tunggu, sedang redirect ke WhatsApp...</p>
+</body>
+</html>
